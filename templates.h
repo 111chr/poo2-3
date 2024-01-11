@@ -13,22 +13,6 @@ using namespace std;
 #ifndef POO_TEMPLATES_H
 #define POO_TEMPLATES_H
 
-//template<typename T1, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8>
-//void AdaugaMasina( vector<Masina *> &stocMasini, const T1 &marca, const T2 &model, const T3 &culoare,
-//                  const T4 &combustibil, const T5 &cc, const T6 &pret, const T7 &an, const T8 &tip) {
-//    try {
-//        Masina *masinaNoua = new Masina(marca, model, culoare, combustibil, cc, pret, an, tip);
-//        stocMasini.push_back(masinaNoua);
-//         cout << "Masina a fost adaugata in stocMasini.\n";
-//    } catch (const ExceptieMotorizareInvalida &ex) {
-//         cerr << "Eroare: " << ex.what() <<  endl;
-//    } catch (const ExceptieKwInvalid &ex) {
-//         cerr << "Eroare: " << ex.what() <<  endl;
-//    } catch (const  exception &ex) {
-//         cerr << "Eroare necunoscuta: " << ex.what() <<  endl;
-//    }
-//}
-
 template<typename T>
 vector<shared_ptr<Masina>> filterCarsByPrice(const vector<shared_ptr<Masina>> &cars, T maxPrice) {
     vector<shared_ptr<Masina>> auxMasini;
@@ -61,6 +45,7 @@ vector<shared_ptr<Camion>> filterCamionByPrice(const vector<shared_ptr<Camion>> 
     }
     return auxCamion;
 }
+
 
 
 #endif

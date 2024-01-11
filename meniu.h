@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <memory>
 #include "templates.h"
 #include "vehicul.h"
 #include "masina.h"
@@ -12,12 +13,46 @@ using namespace std;
 
 class Meniu {
 protected:
+    Meniu() {
+        stocMasini.push_back(make_shared<Masina>("Audi", "A4", "Negru", "Benzina", 1.9, 2000.2, 2006, "Sedan"));
+        stocMasini.push_back(make_shared<Masina>("BMW", "X5", "Alb", "Motorina", 3.0, 5000.50, 2020, "Decapotabila"));
+        stocMasini.push_back(make_shared<Masina>("Ford", "Focus", "Verde", "Benzina", 1.6, 10500.10, 2019, "Sedan"));
+        stocMasini.push_back(make_shared<Masina>("Audi", "A3", "Negru", "Benzina", 1.9, 2000.40, 2006, "Decapotabila"));
+        
+        stocMoto.push_back(make_shared<Moto>("Honda", "Ninja", "Rosie", "Benzina", 252, 3550.2, 2021, 95.5));
+        stocMoto.push_back(make_shared<Moto>("Kawasaki", "Y300", "Verde", "Benzina", 500, 40052.28, 2020, 39.0));
+        stocMoto.push_back(make_shared<Moto>("Yamaha", "YZF-R1", "Albastru", "Benzina", 1000, 10045.2, 2022, 197.2));
+        stocMoto.push_back(make_shared<Moto>("Suzuki", "GSX-R750", "Albastru", "Motorina", 750, 8000.9, 2023, 90.0));
+        stocMoto.push_back(make_shared<Moto>("Honda", "Ninja", "Rosie", "Motorina", 252, 6253.8, 2021, 95.5));
+        
+        stocCamioane.push_back(make_shared<Camion>("Volvo", "FH16", "Alb", "Motorina", 16.1, 12377.1, 2021, 600));
+        stocCamioane.push_back(make_shared<Camion>("Scania", "R 450", "Rosu", "Benzina", 12.7, 70050.8, 2020, 4500));
+        stocCamioane.push_back(make_shared<Camion>("MAN", "TGX", "Gri", "Motorina", 13.0, 65257.21, 2022, 510));
+        stocCamioane.push_back(make_shared<Camion>("Volvo", "FH14", "Negru", "Benzina", 16.1, 82863.0, 2021, 600));
+    }
+    
     vector<shared_ptr<Masina>> stocMasini;
     vector<shared_ptr<Moto>> stocMoto;
     vector<shared_ptr<Camion>> stocCamioane;
-
+    
+    Meniu(const Meniu &) = delete;
+    
+    Meniu &operator=(const Meniu &) = delete;
+    
+    static Meniu *instance;
 public:
-    Meniu();
+    
+    static Meniu *GetInstance() {
+        if (instance == nullptr) {
+            instance = new Meniu();
+        }
+        return instance;
+    }
+    
+    static void DestroyInstance() {
+        delete instance;
+        instance = nullptr;
+    }
     
     ~Meniu();
     
@@ -268,45 +303,41 @@ public:
         
         while (!exitapp) {
             cout << "Introduceti optiune: ";
-            if (!(cin >> optiune)) {
-                cout << "Introduceti o optiune valida!\n";
+            
+            while (!(cin >> optiune)) {
+                cout << "Introduceti o optiune valida (un numar)!\n";
                 cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                continue;
+                cin.ignore(numeric_limits<streamsize>::max(), '\n'); // ignora caracterele ramase in buffer
+                cout << "Introduceti optiune: ";
             }
             
             switch (optiune) {
-                case 1: {
+                case 1:
                     AdaugaMasina();
                     break;
-                }
-                case 2: {
+                case 2:
                     VizualizeazaStoc();
                     break;
-                }
-                case 3: {
+                case 3:
                     CautaDupaMarca();
                     break;
-                }
-                case 4: {
+                case 4:
                     CalculeazaTva();
                     break;
-                }
-                case 5: {
+                case 5:
                     CautaPret();
                     break;
-                }
-                case 0: {
+                case 0:
                     exitapp = true;
                     break;
-                }
-                default: {
-                    cout << "optiune invalida. Incercati din nou.\n";
+                default:
+                    cout << "Optiune invalida. Incercati din nou.\n";
                     break;
-                }
             }
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
     }
 };
 
-#endif //POO_3_MENIU_H
+
+#endif

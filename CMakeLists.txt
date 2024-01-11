@@ -9,8 +9,6 @@ add_executable(VSCODEC__
         main.cpp
         meniu.cpp
         meniu.h
-        reprezentanta.cpp
-        reprezentanta.h
         vehicul.cpp
         vehicul.h
         moto.cpp
