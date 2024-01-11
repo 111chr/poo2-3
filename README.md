@@ -21,8 +21,9 @@ Include funcționalități pentru afișarea instrucțiunilor, gestionarea stocul
 templates.h: Conține funcții template.
 Implementare de excepții personalizate pentru a gestiona cazuri specifice de eroare.
 
- # Cerinte
--- Tema 2
+# Cerinte
+
+# Tema 2
 -Separarea codului din clase în .h (sau .hpp) și .cpp
 
 -Minim o clasă de bază și 3 clase derivate (cu bază proprie, cele cu bază predifinită pot fi în plus)
@@ -49,7 +50,7 @@ Implementare de excepții personalizate pentru a gestiona cazuri specifice de er
 
 -Utilizare STL
 
--- Tema 3
+# Tema 3
 -Minim 2 șabloane de proiectare (design patterns)
 
 -Minim o clasă template cu sens; minim 2 instanțieri
