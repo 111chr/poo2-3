@@ -7,7 +7,7 @@ using namespace std;
 #define POO_MOTO_H
 
 class Moto : public Vehicul {
-protected:
+private:
     float kw; //decapotabila sau sedane
 public:
     

@@ -7,7 +7,7 @@ using namespace std;
 #define POO_CAMION_H
 
 class Camion : public Vehicul {
-protected:
+private:
     float gabarit;
 public:
     

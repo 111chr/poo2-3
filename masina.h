@@ -7,7 +7,7 @@ using namespace std;
 #define POO_MASINA_H
 
 class Masina : public Vehicul {
-protected:
+private:
     string tip; //decapotabila sau sedane
 public:
     
