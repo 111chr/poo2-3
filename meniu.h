@@ -7,15 +7,15 @@
 #include "exceptii.h"
 
 using namespace std;
-
 #ifndef POO_MENIU_H
 #define POO_MENIU_H
 
 class Meniu {
-private:
+protected:
     vector<shared_ptr<Masina>> stocMasini;
     vector<shared_ptr<Moto>> stocMoto;
     vector<shared_ptr<Camion>> stocCamioane;
+
 public:
     Meniu();
     
@@ -277,23 +277,23 @@ public:
             
             switch (optiune) {
                 case 1: {
-                    AdaugaMasina(); //done
+                    AdaugaMasina();
                     break;
                 }
                 case 2: {
-                    VizualizeazaStoc(); //done
+                    VizualizeazaStoc();
                     break;
                 }
                 case 3: {
-                    CautaDupaMarca(); //done
+                    CautaDupaMarca();
                     break;
                 }
                 case 4: {
-                    CalculeazaTva(); //done
+                    CalculeazaTva();
                     break;
                 }
                 case 5: {
-                    CautaPret(); //done
+                    CautaPret();
                     break;
                 }
                 case 0: {

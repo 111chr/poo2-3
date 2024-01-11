@@ -62,23 +62,5 @@ vector<shared_ptr<Camion>> filterCamionByPrice(const vector<shared_ptr<Camion>> 
     return auxCamion;
 }
 
-template<typename T>
-class Lista {
-private:
-    vector<T> elements;
-public:
-    Lista() {}
-    
-    void Adauga(const T &element) {
-        elements.push_back(element);
-    }
-    
-    void Afiseaza() const {
-        for (const T &element: elements) {
-            cout << element << " ";
-        }
-        cout << std::endl;
-    }
-};
 
 #endif
