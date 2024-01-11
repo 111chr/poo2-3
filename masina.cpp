@@ -56,3 +56,8 @@ float Masina::calculCostTotal() const {
     float pretCuTVA = pret + tva;
     return pretCuTVA;
 }
+
+void Masina::AfiseazaDetalii() const {
+    cout << "Marca: " << marca << ", Model: " << model << ", Culoare: " << culoare << endl;
+    cout << "Combustibil: " << combustibil << ", CC: " << cc << ", An: " << an << ", Pret: " << pret << ", Tip: " << tip  << endl;
+}

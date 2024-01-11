@@ -46,6 +46,21 @@ vector<shared_ptr<Camion>> filterCamionByPrice(const vector<shared_ptr<Camion>> 
     return auxCamion;
 }
 
-
+template<typename T>
+class GestiuneVehicule {
+private:
+    std::vector<std::shared_ptr<T>> vehicule;
+public:
+    void AdaugaVehicul(std::shared_ptr<T> vehicul) {
+        vehicule.push_back(vehicul);
+    }
+    
+    void AfiseazaVehicule() const {
+        for (const auto &vehicul: vehicule) {
+            vehicul->AfiseazaDetalii();
+            cout << "--------------------\n";
+        }
+    }
+};
 
 #endif

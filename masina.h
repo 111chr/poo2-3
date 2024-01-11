@@ -35,6 +35,8 @@ public:
     const float &getPret() const override;
     
     float calculCostTotal() const override;
+    
+    void AfiseazaDetalii() const override;
 };
 
 

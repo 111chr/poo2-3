@@ -35,6 +35,8 @@ public:
     virtual const float &getPret() const;
     
     virtual float calculCostTotal() const;
+    
+    virtual void AfiseazaDetalii() const;
 };
 
 #endif

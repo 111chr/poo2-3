@@ -75,3 +75,8 @@ float Vehicul::calculCostTotal() const {
     float pretCuTVA = pret * 1.19;
     return pretCuTVA;
 }
+
+void Vehicul::AfiseazaDetalii() const {
+    cout << "Marca: " << marca << ", Model: " << model << ", Culoare: " << culoare << endl;
+    cout << "Combustibil: " << combustibil << ", CC: " << cc << ", An: " << an << ", Pret: " << pret << endl;
+}
